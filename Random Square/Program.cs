@@ -11,16 +11,19 @@ namespace Random_Square
 
             var randomNumbers = new List<int>();
 
-            var squaredNumbers = new List<int>();
-
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 20; i++)
             {
-                var randomNum = random.Next(1, 20);
+                var randomNum = random.Next(1, 51);
                 randomNumbers.Add(randomNum);
-                squaredNumbers.Add(randomNum * randomNum);
             }
-
             Console.WriteLine($"Random Number List: {string.Join(",", randomNumbers)}");
+
+            var squaredNumbers = new List<int>();
+            for (int i = 0; i < randomNumbers.Count; i++)
+            {
+                var squaredNumber = randomNumbers[i] * randomNumbers[i];
+                squaredNumbers.Add(squaredNumber);
+            }
             Console.WriteLine($"Squared Number List: {string.Join(",", squaredNumbers)}");
 
             var evenNumberSquared = new List<int>();
